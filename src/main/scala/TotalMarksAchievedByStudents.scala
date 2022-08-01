@@ -9,6 +9,7 @@ object TotalMarksAchievedByStudents {
     val df = spark.read.option("header",value = true).csv("src/test/resources/StudentData.csv")
     df.groupBy(df("gender")).agg(functions.sum(df("marks"))as "total marks by male and female students").show()
 
+
   }
 
 }
